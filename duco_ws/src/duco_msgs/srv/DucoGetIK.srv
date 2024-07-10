@@ -1,0 +1,6 @@
+float32[] ref_joint
+float32[] pos
+float32[] rpy
+-----------------------
+float32[] joint
+bool success

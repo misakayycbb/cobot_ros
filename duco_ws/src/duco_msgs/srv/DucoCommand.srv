@@ -1,0 +1,16 @@
+#command type
+int8 commandType
+int8 operateType
+
+#script
+string script
+
+#program name
+string program
+
+#col_control
+bool col_on
+int8 sensitivity
+---
+#true:finish false:error
+int32 state

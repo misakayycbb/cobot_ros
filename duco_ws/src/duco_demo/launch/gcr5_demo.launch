@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="gcr5_demo" pkg="duco_demo" type="gcr5_demo" respawn="false" output="screen">
+  </node>
+
+</launch>

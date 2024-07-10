@@ -1,0 +1,12 @@
+#IO 操作类型 Get Set
+int8 ioOper
+#IO 类型
+int8 type  # 0:gen io  1:tool io
+#IO 端口
+int8 port  #GEN IO 0--16  TOOL IO 0--1
+#SetIO 值
+bool value
+---
+#获取操作结果
+bool result
+

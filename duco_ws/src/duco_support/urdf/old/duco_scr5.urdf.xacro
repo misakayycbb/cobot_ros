@@ -1,0 +1,256 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="siasun_scr5">
+<material name ="Blue">
+   <color rgba="0 0 1.0 1.0"/>
+ </material>
+<material name ="Black">
+   <color rgba="0 0 0 0.8"/>
+ </material>
+<material name ="Dark Blue">
+   <color rgba="0.098 0.098 0.439 1.0"/>
+ </material>
+<material name ="light Blue">
+   <color rgba="0.387 0.584 0.93 1.0"/>
+ </material>
+<material name ="White">
+   <color rgba="1 1 1 1"/>
+ </material>
+<material name ="Antique White">
+   <color rgba="0.98 0.92 0.84 1"/>
+ </material>
+<material name ="Gray">
+   <color rgba="0.5 0.46 0.412 1"/>
+ </material>
+<material name ="Dark Gray">
+   <color rgba="0.212 0.212 0.212 1"/>
+ </material>
+ <material name ="Silver">
+    <color rgba="0.588 0.588 0.588 1"/>
+  </material>
+
+<!-- base_link -->
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/base_link.stl"/>
+      </geometry>
+      <material name ="Dark Gray"/>
+    </visual>
+   <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/base_link.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="3"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+<!-- link_1 -->
+<link name="link_1">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/link_1.stl"/>
+      </geometry>
+      <material name ="Dark Gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/link_1.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="7.174"/>
+      <inertia ixx="0.039009" ixy="-0.000027" ixz="0.000025" iyy="0.041449" iyz="0.000386" izz="0.024705"/>
+    </inertial>
+  </link>
+<!-- joint_1 -->
+<joint name="joint_1" type="revolute">
+    <origin rpy="0 0 -1.5707963" xyz="0 0 0.172"/>
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="${-pi}" upper="${pi}" velocity="${125*pi/180}"/>
+  </joint>
+<!-- link_2 -->
+<link name="link_2">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/link_2.stl"/>
+      </geometry>
+      <material name ="Dark Gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/link_2.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+       <mass value="5.025"/>
+      <inertia ixx="0.201742" ixy="-0.000626" ixz="0.000586" iyy="0.019648" iyz="-0.004477" izz="0.197178"/>
+    </inertial>
+  </link>
+<!-- joint_2 -->
+<joint name="joint_2" type="revolute">
+    <origin rpy="0 1.5707963 0" xyz="0 0 0.13985"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="${-105*pi/180}" upper="${105*pi/180}" velocity="${125*pi/180}"/>
+  </joint>
+<!-- link_3 -->
+<link name="link_3">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/link_3.stl"/>
+      </geometry>
+     <material name ="Dark Gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/link_3.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="4.059"/>
+      <inertia ixx="0.017782" ixy="0.000011" ixz="0.000" iyy="0.017267" iyz="0.000565" izz="0.010203"/>
+    </inertial>
+  </link>
+<!-- joint_3 -->
+<joint name="joint_3" type="revolute">
+    <origin rpy="0 -1.5707963 0" xyz="-0.2695 0 0"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="${-pi}" upper="${pi}" velocity="${185*pi/180}"/>
+  </joint>
+<!-- link_4 -->
+<link name="link_4">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/link_4.stl"/>
+      </geometry>
+      <material name ="Dark Gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/link_4.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="4.950"/>
+      <inertia ixx="0.210487" ixy="-0.000809" ixz="0.000688" iyy="0.019053" iyz="-0.006166" izz="0.205034"/>
+    </inertial>
+  </link>
+<!-- joint_4 -->
+<joint name="joint_4" type="revolute">
+    <origin rpy="0 1.5707963 0" xyz="0 0 0.1305"/>
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="${-115*pi/180}" upper="${115*pi/180}" velocity="${185*pi/180}"/>
+  </joint>
+<!-- link_5 -->
+<link name="link_5">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/link_5.stl"/>
+      </geometry>
+     <material name ="Dark Gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/link_5.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="1.290"/>
+      <inertia ixx="0.017254" ixy="0.00" ixz="0.00" iyy="0.012827" iyz="-0.001943" izz="0.008386"/>
+    </inertial>
+  </link>
+<!-- joint_5 -->
+<joint name="joint_5" type="revolute">
+    <origin rpy="0 1.5707963 3.1415926" xyz="-0.2725 0 0"/>
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="${-pi}" upper="${pi}" velocity="${185*pi/180}"/>
+  </joint>
+<!-- link_6 -->
+<link name="link_6">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/link_6.stl"/>
+      </geometry>
+      <material name ="Dark Gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/link_6.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="4.766"/>
+      <inertia ixx="0.028941" ixy="-0.000012" ixz="0.000011" iyy="0.010801" iyz="0.000182" izz="0.024375"/>
+    </inertial>
+  </link>
+<!-- joint_6 -->
+<joint name="joint_6" type="revolute">
+    <origin rpy="0 1.5707963 3.141592654" xyz="0 0 0.1275"/>
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="${-110*pi/180}" upper="${110*pi/180}" velocity="${185*pi/180}"/>
+  </joint>
+<!-- link_7 -->
+<link name="link_7">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/meshes/SCR5/link_7.stl"/>
+      </geometry>
+      <material name ="Dark Gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://duco_support/collision/SCR5/link_7.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="0.358"/>
+      <inertia ixx="0.000458" ixy="-0.000" ixz="-0.000006" iyy="0.000451" iyz="-0.000007" izz="0.000484"/>
+    </inertial>
+  </link>
+<!-- joint_7 -->
+<joint name="joint_7" type="revolute">
+    <origin rpy="3.141592654 1.5707963 0" xyz="-0.16880 0 0"/>
+    <parent link="link_6"/>
+    <child link="link_7"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="${-pi}" upper="${pi}" velocity="${185*pi/180}"/>
+  </joint>
+
+
+
+</robot>

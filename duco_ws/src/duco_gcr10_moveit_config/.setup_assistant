@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: duco_support
+    relative_path: urdf/duco_gcr10.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/duco_gcr10.srdf
+  CONFIG:
+    author_name: yangfeng
+    author_email: yangfeng.in@siasun.com
+    generated_timestamp: 1677461637
